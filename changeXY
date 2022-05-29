@@ -1,0 +1,21 @@
+Question: 
+Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
+changeXY("codex") → "codey"
+changeXY("xxhixx") → "yyhiyy"
+changeXY("xhixhix") → "yhiyhiy"
+
+SOLUTION:
+public String changeXY(String str) {
+  String s = ""; 
+  if (str.length() > 0){
+        if(str.charAt(0)=='x'){
+        s = s+"y";
+      }
+  else {
+    s = s+str.charAt(0);
+  }
+  str = str.substring(1);
+  return s + changeXY(str);  
+}
+return ""; 
+}
