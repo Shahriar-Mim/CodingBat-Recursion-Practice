@@ -1,0 +1,26 @@
+Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
+
+countHi("xxhixx") → 1
+countHi("xhixhix") → 2
+countHi("hi") → 1
+
+Solution:
+public int countHi(String str) {
+  if (str.length() > 2 ){
+    String s = str.substring(0,2);
+    if (s.equals("hi")){
+      str = str.substring(2,str.length());
+      return 1+countHi(str);
+    }
+    str = str.substring(1,str.length());
+      return countHi(str);
+
+  }
+  if(str.length()==2){
+    String s = str.substring(0,2);
+    if (s.equals("hi")){
+      return 1;
+  }
+  }
+    return 0 ; 
+}
