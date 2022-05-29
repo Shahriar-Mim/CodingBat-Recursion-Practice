@@ -1,0 +1,18 @@
+Question: 
+Given a string, compute recursively a new string where all the 'x' chars have been removed.
+
+noX("xaxb") → "ab"
+noX("abc") → "abc"
+noX("xx") → ""
+
+SOLUTION: 
+public String noX(String str) {
+  String s= "" ;
+  if(str.length()>0){
+    if(str.charAt(0)!='x'){
+      s = s+str.charAt(0);
+    }
+     return s + noX(str.substring(1));
+  }
+  return "";
+}
