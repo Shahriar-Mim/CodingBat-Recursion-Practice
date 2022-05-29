@@ -9,7 +9,7 @@ public String changeXY(String str) {
   String s = ""; 
   if (str.length() > 0){
         if(str.charAt(0)=='x'){
-        s = s+"y";
+        s = "y";
       }
   else {
     s = s+str.charAt(0);
