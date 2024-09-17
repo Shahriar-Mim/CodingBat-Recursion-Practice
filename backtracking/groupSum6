@@ -1,0 +1,15 @@
+public boolean groupSum6(int start, int[] nums, int target) {
+  if(target < 0)
+    return false;
+  
+  if(start >= nums.length)
+    return target == 0;
+    
+  boolean yes, no = false; 
+  yes = groupSum6(start+1, nums, target-nums[start]); //Y
+  
+  if(nums[start] != 6)
+    no = groupSum6(start+1, nums, target); //N
+  
+  return yes || no; 
+}
