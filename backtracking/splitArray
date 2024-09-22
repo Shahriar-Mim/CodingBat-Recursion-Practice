@@ -1,0 +1,12 @@
+public boolean splitArray(int[] nums) {
+   return recursive(0, 0, 0, nums);
+}
+
+boolean recursive(int start, int a, int b, int[] nums) {
+        if (start >= nums.length) {
+            return a == b;
+        }
+
+        return recursive(start + 1, a + nums[start], b, nums) ||
+                recursive(start + 1, a, b + nums[start], nums);
+}
