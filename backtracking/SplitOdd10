@@ -1,0 +1,13 @@
+public boolean splitOdd10(int[] nums) {
+  return recursive(0,0,0,nums);
+}
+
+boolean recursive(int start, int a, int b, int[] nums) {
+    if (start >= nums.length) {
+          if (a % 10 == 0 && b % 2 != 0)
+                return true;
+          return a % 2 != 0 && b % 10 == 0;
+    }
+
+    return recursive(start + 1, a + nums[start], b, nums) || recursive(start + 1, a, b + nums[start], nums);
+    }
