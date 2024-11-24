@@ -14,7 +14,7 @@ public boolean groupSumClump(int start, int[] nums, int target) {
 }
 
 public int adjacentSum(int start, int[] nums){
-  if(start+1 >= nums.length)
+  if(start+1 == nums.length)
     return start; 
   if(nums[start] == nums[start+1])
     return adjacentSum(start+1,nums);
