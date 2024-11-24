@@ -1,17 +1,16 @@
 public boolean groupSumClump(int start, int[] nums, int target) {
-  if(target < 0 )
+  if(target < 0 ){
     return false; 
-  
-  if(start >= nums.length)
+  }
+  if(start >= nums.length){
     return target == 0; 
-  
+  }
   int repeatIndex = adjacentSum(start,nums); 
   int sum = nums[start] * (repeatIndex - start + 1); 
   
-  if (groupSumClump(repeatIndex+1,nums,target-sum))
-    return true; 
-  else 
-    return groupSumClump(repeatIndex+1,nums,target);
+   return groupSumClump(repeatIndex+1,nums,target-sum) || 
+   groupSumClump(repeatIndex+1,nums,target);
+  
 }
 
 public int adjacentSum(int start, int[] nums){
